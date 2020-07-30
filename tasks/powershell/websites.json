@@ -1,0 +1,16 @@
+{
+   "websites":[
+      {
+         "google":"https://www.google.com/"
+      },
+      {
+         "study":"https://exercism.io/#explore-languages"
+      },
+      {
+         "fake":"http://baddomain1.com"
+      },
+      {
+         "editor":"https://jsoneditoronline.org/"
+      }
+   ]
+}

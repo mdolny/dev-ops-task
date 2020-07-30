@@ -1,0 +1,36 @@
+apiVersion: apps/v1beta
+kind: Deployment
+metadata:
+  labels:
+    app: frontend
+  name: app-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - image: eu.gcr.io/test/app-frontend:latest
+          name: app-frontend
+          ports:
+            - containerPort: 8080
+---
+kind: Service
+apiVersion: v1
+metadata:
+  labels:
+    app: frontend
+  name: app-frontend-svc
+spec:
+  selector:
+    app:  frontend
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080

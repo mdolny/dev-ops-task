@@ -1,0 +1,29 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata: 
+  name: spot-k8s
+  region: eu-west-1
+  version: "1.17"
+vpc:
+  nat:
+    gateway: Single  # other options: HighlyAvailable, Disable, Single (default)
+nodeGroups:
+  - name: spot-group-1
+    minSize: 2
+    maxSize: 5
+    instancesDistribution:
+      maxprice: 0.007
+      instanceTypes: ["t3.small", "t3.medium"]
+      onDemandBaseCapacity: 0
+      onDemandPercentageAboveBaseCapacity: 0
+      spotInstancePools: 2
+  - name: spot-group-2
+    minSize: 2
+    maxSize: 5
+    instancesDistribution:
+      maxprice: 0.007
+      instanceTypes: ["t3.small", "t3.medium"]
+      onDemandBaseCapacity: 0
+      onDemandPercentageAboveBaseCapacity: 0
+      spotInstancePools: 2
