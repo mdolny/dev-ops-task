@@ -8,10 +8,10 @@ Please find the input datasource with endpoints [here](./tasks/powershell/websit
 
 ### Answer: 
 
-Powershell versions:
-$PSVersionTable.PSVersion.ToString()
-5.1.17134.858
-$PSVersionTable.PSVersion.ToString()
+Powershell versions:  
+$PSVersionTable.PSVersion.ToString()  
+5.1.17134.858  
+$PSVersionTable.PSVersion.ToString()  
 7.0.3
 
 Please find script [here](./tasks/powershell/endpoint_check.ps1)
@@ -22,9 +22,9 @@ Please find the deployment manifest [here](./tasks/k8s_manifest/deployment.yml)
 
 ### My review: 
 
-Assumptions: 
-K8S version 1.17.x
-Image changed to nginx:latest
+Assumptions:   
+K8S version 1.17.x  
+Image changed to nginx:latest  
 
 I've run that manifest on test new cluster on spot instances. Manifest work like a charm after change of image and cut of "alpha5" from "apiVersion". As I recall production ready deploymnets should have more than one replica, should use https instead of http, "imagePullPolicy" should be defined. Image url looks like it is from GCR private registry but there is no project test that one I'm sure.
 
